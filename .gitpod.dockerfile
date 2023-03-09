@@ -17,8 +17,6 @@ RUN adduser --disabled-password --gecos '' docker \
  && adduser docker sudo \
  && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-RUN apt-get update && apt-get install -y \
-    make gcc git texinfo gzip squashfs-tools
- && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y make gcc git texinfo gzip squashfs-tools && rm -rf /var/lib/apt/lists/*
 
 USER docker
